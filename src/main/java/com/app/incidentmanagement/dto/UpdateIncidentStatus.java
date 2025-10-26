@@ -1,13 +1,19 @@
 package com.app.incidentmanagement.dto;
 
-public class UpdateIncidentStatus {
-    private String status;
+import com.app.incidentmanagement.model.IncidentStatus;
 
-    public String getStatus() {
-        return status;
+import jakarta.validation.constraints.NotNull;
+
+public class UpdateIncidentStatus {
+
+    @NotNull(message = "incidentStatus is required")
+    private IncidentStatus incidentStatus;
+
+    public IncidentStatus getIncidentStatus() {
+        return incidentStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setIncidentStatus(IncidentStatus incidentStatus) {
+        this.incidentStatus = incidentStatus;
     }
 }

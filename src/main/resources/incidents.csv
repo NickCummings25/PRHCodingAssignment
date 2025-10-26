@@ -1,0 +1,3 @@
+incident_id, title, description, reported_by, severity, timestamp, incident_status
+INC102320, Pod Restart, pods have gone stale on env need restart, David Davidson, MEDIUM, 2025-10-25T15:07:13.011601034, OPEN
+INC102321, HELP ME, servers exploded :(, Mavid Mavidson, HIGH, 2025-10-24T15:07:13.011601034, IN_PROGRESS

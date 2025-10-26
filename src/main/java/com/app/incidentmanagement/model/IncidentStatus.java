@@ -1,6 +1,6 @@
 package com.app.incidentmanagement.model;
 
-public enum Status {
+public enum IncidentStatus {
     OPEN,
     IN_PROGRESS,
     RESOLVED

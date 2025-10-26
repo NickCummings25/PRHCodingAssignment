@@ -1,2 +1,0 @@
-incident_id, title, description, reported_by, severity, timestamp, status
-INC102320, Pod Restart, pods have gone stale on env need restart, David Davidson, medium, time, open
