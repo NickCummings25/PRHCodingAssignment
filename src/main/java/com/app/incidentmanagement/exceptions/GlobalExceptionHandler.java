@@ -1,6 +1,5 @@
 package com.app.incidentmanagement.exceptions;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,7 +16,7 @@ public class GlobalExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> inpuValidationError(MethodArgumentNotValidException error){
+    public ResponseEntity<String> inputValidationError(MethodArgumentNotValidException error){
         String defaultMessage = Objects.requireNonNull(error.getBindingResult().getFieldError()).getDefaultMessage();
         logger.warn("Validation Error: {}", error.getMessage());
         return new ResponseEntity<>("Request Body Provided is not valid: " + defaultMessage, HttpStatus.BAD_REQUEST);

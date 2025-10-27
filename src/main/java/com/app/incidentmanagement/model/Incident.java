@@ -1,12 +1,10 @@
 package com.app.incidentmanagement.model;
 
-import com.app.incidentmanagement.model.Severity;
-import com.app.incidentmanagement.model.IncidentStatus;
-
 import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="INCIDENT_LIST")
@@ -14,14 +12,15 @@ public class Incident {
 
     @Id
     @Column(name = "incident_id")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String incidentId;
 
     @NotBlank(message = "title is required")
+    @Size(min = 5, max = 50, message = "title must be between 5 and 50 characters long")
     @Column(name = "title")
     private String title;
 
     @NotBlank(message = "description is required")
+    @Size(min = 10, max = 100, message = "description must be between 10 and 100 characters long")
     @Column(name = "description")
     private String description;
 
@@ -40,7 +39,7 @@ public class Incident {
     @NotNull(message = "incidentStatus is required")
     @Enumerated(EnumType.STRING)
     @Column(name = "incident_status")
-    private IncidentStatus status;
+    private IncidentStatus incidentStatus;
 
     @PrePersist
     protected void onCreate() {
@@ -98,10 +97,10 @@ public class Incident {
     }
 
     public IncidentStatus getIncidentStatus() {
-        return status;
+        return incidentStatus;
     }
 
-    public void setIncidentStatus(IncidentStatus status) {
-        this.status = status;
+    public void setIncidentStatus(IncidentStatus incidentStatus) {
+        this.incidentStatus = incidentStatus;
     }
 }

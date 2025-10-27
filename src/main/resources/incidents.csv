@@ -1,3 +1,6 @@
 incident_id, title, description, reported_by, severity, timestamp, incident_status
 INC102320, Pod Restart, pods have gone stale on env need restart, David Davidson, MEDIUM, 2025-10-25T15:07:13.011601034, OPEN
 INC102321, HELP ME, servers exploded :(, Mavid Mavidson, HIGH, 2025-10-24T15:07:13.011601034, IN_PROGRESS
+INC1099321, Math Homework Assistance, I do not know how to count, Bart Simpson, HIGH, 2025-10-24T15:07:13.011601034, IN_PROGRESS
+INC90210, where is my phone camera, hello sweetie I cant figure out how to get the camera on my phone to come on, Mom, LOW, 2025-10-27T15:11:31.709802, OPEN
+INC8675309, downloaded a virus, it said I won a new macbook..., Steve Jobs, MEDIUM, 2025-10-27T15:11:31.709802, IN_PROGRESS

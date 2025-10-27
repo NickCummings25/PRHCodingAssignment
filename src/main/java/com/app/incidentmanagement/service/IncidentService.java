@@ -19,19 +19,19 @@ public class IncidentService {
     }
 
     public Incident createIncident(Incident incident) {
-        //Incident ID is created with INC and the current time in Miliseconds
+        //Incident ID is created with INC and the current time in Milliseconds
         //This can be improved in the future with a more unique and incremental INC00000 code
         incident.setIncidentId("INC" + System.currentTimeMillis());
         return incidentRepository.save(incident);
     }
 
-    public List<Incident> getIncidents(Severity severity, IncidentStatus status) {
-        if (severity != null && status != null) {
-            return incidentRepository.findBySeverityAndStatus(severity, status);
+    public List<Incident> getIncidents(Severity severity, IncidentStatus incidentStatus) {
+        if (severity != null && incidentStatus != null) {
+            return incidentRepository.findBySeverityAndIncidentStatus(severity, incidentStatus);
         } else if (severity != null) {
             return incidentRepository.findBySeverity(severity);
-        } else if (status != null) {
-            return incidentRepository.findByIncidentStatus(status);
+        } else if (incidentStatus != null) {
+            return incidentRepository.findByIncidentStatus(incidentStatus);
         } else {
             return incidentRepository.findAll();
         }

@@ -3,7 +3,7 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
-    url: jdbc:h2:mem:incidentmanagement
+    url: jdbc:h2:mem:incidentdb
   jpa:
     hibernate:
       ddl-auto: none

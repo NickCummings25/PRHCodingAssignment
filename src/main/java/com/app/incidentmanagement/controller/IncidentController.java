@@ -6,7 +6,6 @@ import com.app.incidentmanagement.model.IncidentStatus;
 import com.app.incidentmanagement.service.IncidentService;
 import com.app.incidentmanagement.dto.UpdateIncidentStatus;
 
-import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping(value = "v1/incidents")
@@ -32,10 +29,10 @@ public class IncidentController {
     @GetMapping
     public List<Incident> getIncidents(
            @RequestParam(required = false) Severity severity,
-           @RequestParam(required = false) IncidentStatus status
+           @RequestParam(required = false) IncidentStatus incidentStatus
     ) {
-        logger.info("Getting incidents with severity: {} and status: {}", severity, status);
-        return incidentService.getIncidents(severity, status);
+        logger.info("Getting incidents with severity: {} and incidentStatus: {}", severity, incidentStatus);
+        return incidentService.getIncidents(severity, incidentStatus);
     }
 
     @PostMapping

@@ -8,3 +8,6 @@
 # To run application
 - Run `mvn spring-boot:run`
 - Once Maven is up and running perform a GET on `localhost:8080/v1/incidents` to ensure API is functional
+
+# Additional Troubleshooting
+- As a Dockerfile is not yet set up in this repository, if you are running into issues with starting the application, try switching your jdk to version 21
