@@ -1,5 +1,6 @@
 package com.app.incidentmanagement.controller;
 
+import com.app.incidentmanagement.dto.CreateIncident;
 import com.app.incidentmanagement.model.Incident;
 import com.app.incidentmanagement.model.Severity;
 import com.app.incidentmanagement.model.IncidentStatus;
@@ -36,7 +37,8 @@ public class IncidentController {
     }
 
     @PostMapping
-    public ResponseEntity<Incident> createIncident(@Valid @RequestBody Incident incident){
+    public ResponseEntity<Incident> createIncident(@Valid @RequestBody CreateIncident request) {
+        Incident incident = request.toEntity();
         Incident newIncident = incidentService.createIncident(incident);
         logger.info("Created incident with ID: {}", newIncident.getIncidentId());
         return new ResponseEntity<>(newIncident, HttpStatus.CREATED);
